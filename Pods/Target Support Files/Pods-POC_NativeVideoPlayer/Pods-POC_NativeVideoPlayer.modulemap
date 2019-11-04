@@ -1,0 +1,6 @@
+framework module Pods_POC_NativeVideoPlayer {
+  umbrella header "Pods-POC_NativeVideoPlayer-umbrella.h"
+
+  export *
+  module * { export * }
+}
