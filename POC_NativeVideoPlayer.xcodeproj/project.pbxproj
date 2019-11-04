@@ -164,9 +164,8 @@
 		BA07474123432F6A00323710 /* VimeoPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				BA0747442343316600323710 /* VimeoService */,
-				BA81F2812338A512001B14D6 /* Utility */,
 				BAD782DA2330D8820023BE08 /* Assets.xcassets */,
+				BA7D3594237046FA0013618A /* Helper classes */,
 				BA8F2CEA234DF93400062C35 /* SubtitlePickerViewController.swift */,
 				BA8F2CEB234DF93400062C35 /* SubtitlePickerViewController.xib */,
 				BACBA4362341DA05005FC117 /* DefaultControlsContainer.swift */,
@@ -175,14 +174,6 @@
 				BA07474223432FBE00323710 /* PlayerViewProtocols.swift */,
 			);
 			path = VimeoPlayer;
-			sourceTree = "<group>";
-		};
-		BA0747442343316600323710 /* VimeoService */ = {
-			isa = PBXGroup;
-			children = (
-				BAB2497823321A79005BEAE0 /* VimeoService.swift */,
-			);
-			path = VimeoService;
 			sourceTree = "<group>";
 		};
 		BA4E92B12346245F0000CAF6 /* 04. Favorites */ = {
@@ -194,12 +185,13 @@
 			path = "04. Favorites";
 			sourceTree = "<group>";
 		};
-		BA81F2812338A512001B14D6 /* Utility */ = {
+		BA7D3594237046FA0013618A /* Helper classes */ = {
 			isa = PBXGroup;
 			children = (
+				BAB2497823321A79005BEAE0 /* VimeoService.swift */,
 				BACBA43E2341DE92005FC117 /* Utils.swift */,
 			);
-			path = Utility;
+			name = "Helper classes";
 			sourceTree = "<group>";
 		};
 		BAD782C72330D87E0023BE08 = {
