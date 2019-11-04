@@ -61,7 +61,7 @@ class PlayerViewPresenter: UIViewController {
     
 }
 
-class PlayerView: UIViewController {
+public class PlayerView: UIViewController {
     
     static let controlsInteractionEndedNotification: Notification = Notification(name: .init("CONTROLS_INTERACTION_ENDED"))
     static let controlsInteractionBeganNotification: Notification = Notification(name: .init("CONTROLS_INTERACTION_BEGAN"))
@@ -573,7 +573,7 @@ class PlayerView: UIViewController {
 // MARK: - Extensions PlayerDelegate
 extension PlayerView: PlayerDelegate {
     
-    func playerDidUpdateState(player: Player, previousState: PlayerState) {
+    public func playerDidUpdateState(player: Player, previousState: PlayerState) {
         switch player.state {
         case .loading:
             break
@@ -590,19 +590,19 @@ extension PlayerView: PlayerDelegate {
         }
     }
     
-    func playerDidUpdatePlaying(player: Player) {
+    public func playerDidUpdatePlaying(player: Player) {
         DispatchQueue.main.async {
             self.controlsContainer.playButton.isSelected = player.playing
         }
     }
     
-    func playerDidUpdateBufferedTime(player: Player) {
+    public func playerDidUpdateBufferedTime(player: Player) {
         guard player.duration > 0, let image = renderBufferedTimeImage(duration: player.duration, bufferedTime: player.bufferedTime) else { return }
         controlsContainer.slider.setMaximumTrackImage(image, for: .normal)
         
     }
     
-    func playerDidUpdateTime(player: Player) {
+    public func playerDidUpdateTime(player: Player) {
         guard player.duration > 0 else { return }
         
         let ratio = player.time / player.duration

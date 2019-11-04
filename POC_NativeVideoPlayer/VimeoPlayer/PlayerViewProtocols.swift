@@ -20,32 +20,32 @@ extension AutoHidingView {
     }    
 }
 
-class PlayerViewButton: UIButton, AutoHidingView {
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+public class PlayerViewButton: UIButton, AutoHidingView {
+    override public func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
         interactionEnded()
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         interactionStart()
     }
 }
 
-class PlayerViewSlider: UISlider, AutoHidingView {
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+public class PlayerViewSlider: UISlider, AutoHidingView {
+    override public func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
         interactionEnded()
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         interactionStart()
     }
 }
 
 /// Protocol to define UI for custom controls to be shown over a given player
-protocol ControlsContainerProtocol: UIView {
+public protocol ControlsContainerProtocol: UIView {
     /// Play/pause button. isSelected will be change based player.state. Set icons accordingly.
     var playButton: PlayerViewButton! { get }
     
@@ -84,7 +84,7 @@ protocol ControlsContainerProtocol: UIView {
     
 }
 
-protocol PlayerViewDelegate: AnyObject {
+public protocol PlayerViewDelegate: AnyObject {
     
     /// Asks the delegate for the UIViewController to present animations over.
     func shouldPresentInFullscreenOver() -> UIViewController
@@ -118,7 +118,7 @@ extension PlayerViewDelegate {
     func playingNextVideoInQueue(finishedVideoID oldID: String?, nextID id: String) {}
 }
 
-protocol PlayerViewDataSource: AnyObject {
+public protocol PlayerViewDataSource: AnyObject {
     /// Asks dataSource for the Vimeo ID of the next video that should be played next.
     ///
     /// Will be called when the remaining time of current video playing, is equal or less than, the given 'nextVideoHeadsUpAmount'. HeadsUpAmount is by default 0.0.
