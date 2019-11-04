@@ -2,18 +2,19 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SubtitlePickerViewController" customModule="POC_NativeVideoPlayer" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SubtitlePickerViewController" customModule="MAVimeoPlayer">
             <connections>
-                <outlet property="backgroundView" destination="iSL-zT-wWv" id="gKW-yQ-2Do"/>
-                <outlet property="containerView" destination="tSO-vh-rrc" id="wQR-uG-LAL"/>
-                <outlet property="tableView" destination="J9m-uy-Aah" id="bMb-wt-CYd"/>
-                <outlet property="tableViewHeightConstraint" destination="YM9-PW-mVu" id="kHj-4M-Jz1"/>
-                <outlet property="titleLabel" destination="7sw-YT-0UY" id="vCl-Ju-5y3"/>
+                <outlet property="backgroundView" destination="iSL-zT-wWv" id="oET-kG-Hto"/>
+                <outlet property="containerView" destination="tSO-vh-rrc" id="v55-qv-lfV"/>
+                <outlet property="tableView" destination="J9m-uy-Aah" id="tmQ-TJ-3ID"/>
+                <outlet property="tableViewHeightConstraint" destination="YM9-PW-mVu" id="IlJ-6C-Qii"/>
+                <outlet property="titleLabel" destination="7sw-YT-0UY" id="R00-VN-V8T"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

@@ -8,31 +8,31 @@
 
 import UIKit
 
-class DefaultControlsContainer: UIView, ControlsContainerProtocol {
+public class DefaultControlsContainer: UIView, ControlsContainerProtocol {
     
     static let nibName = "DefaultControlsContainer"
     
     @IBOutlet weak var backgroundView: UIView!
     
-    @IBOutlet weak var dismissButton: PlayerViewButton?
-    @IBOutlet weak var playButton: PlayerViewButton!
-    @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var fullscreenButton: PlayerViewButton?
+    @IBOutlet weak public var dismissButton: PlayerViewButton?
+    @IBOutlet weak public var playButton: PlayerViewButton!
+    @IBOutlet weak public var timeLabel: UILabel!
+    @IBOutlet weak public var fullscreenButton: PlayerViewButton?
     
-    @IBOutlet weak var skipBackward: PlayerViewButton!
-    @IBOutlet weak var skipForward: PlayerViewButton!
+    @IBOutlet weak public var skipBackward: PlayerViewButton!
+    @IBOutlet weak public var skipForward: PlayerViewButton!
     
     @IBOutlet weak var nextVideoButtonContainer: UIView!
-    @IBOutlet weak var nextVideoButton: PlayerViewButton!
+    @IBOutlet weak public var nextVideoButton: PlayerViewButton!
     
-    @IBOutlet weak var subtitleButton: PlayerViewButton!
-    @IBOutlet weak var slider: PlayerViewSlider!
+    @IBOutlet weak public var subtitleButton: PlayerViewButton!
+    @IBOutlet weak public var slider: PlayerViewSlider!
     
     private var gradientLayer = CAGradientLayer()
     
-    var bufferedTimeColor: CGColor! = UIColor.lightGray.cgColor
+    public var bufferedTimeColor: CGColor! = UIColor.lightGray.cgColor
     
-    override func awakeFromNib() {
+    override public func awakeFromNib() {
         playButton.layer.borderColor = UIColor.white.cgColor
         playButton.layer.borderWidth = 2
         
@@ -52,7 +52,7 @@ class DefaultControlsContainer: UIView, ControlsContainerProtocol {
     }
     
     class func instanceFromNib() -> DefaultControlsContainer {
-        return UINib(nibName: DefaultControlsContainer.nibName, bundle: nil).instantiate(withOwner: self, options: nil).first as! DefaultControlsContainer
+        return UINib(nibName: DefaultControlsContainer.nibName, bundle: Utils.podBundle).instantiate(withOwner: self, options: nil).first as! DefaultControlsContainer
     }
     
     private func stringFromNumber(timeStamp: Double, doubleDigit: Bool = true) -> String? {
@@ -64,7 +64,7 @@ class DefaultControlsContainer: UIView, ControlsContainerProtocol {
         return timeString
     }
     
-    func timerLabelShouldBeUpdated(duration: TimeInterval, currentTime: TimeInterval) {
+    public func timerLabelShouldBeUpdated(duration: TimeInterval, currentTime: TimeInterval) {
         let string = NSMutableAttributedString()
         
         let currentTimeString = stringFromNumber(timeStamp: currentTime, doubleDigit: false)! + " / "
@@ -81,12 +81,12 @@ class DefaultControlsContainer: UIView, ControlsContainerProtocol {
         timeLabel.attributedText = string
     }
     
-    override func draw(_ rect: CGRect) {
+    override public func draw(_ rect: CGRect) {
         super.draw(rect)
         gradientLayer.frame = backgroundView.bounds
     }
     
-    func viewLayoutHaveChanged() {
+    public func viewLayoutHaveChanged() {
         gradientLayer.frame = backgroundView.bounds
     }
     

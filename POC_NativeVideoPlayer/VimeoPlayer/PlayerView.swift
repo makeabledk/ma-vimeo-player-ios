@@ -77,8 +77,8 @@ public class PlayerView: UIViewController {
     private var controlsContainer: ControlsContainerProtocol!
     
     // MARK: - Properties
-    var delegate: PlayerViewDelegate?
-    var dataSource: PlayerViewDataSource?
+    public var delegate: PlayerViewDelegate?
+    public var dataSource: PlayerViewDataSource?
     
     private var currentVideoID: String?
     private var nextVideoID: String? {
@@ -158,7 +158,7 @@ public class PlayerView: UIViewController {
     ///   - start: TimeStamp (aka. Double) at which the video should start playing.
     ///   - headsUpAmount: Amount of time, in seconds, the video should present 'nextVideo'-button.
     ///   - controlFadeDuration: Duration for the animation, in seconds, to show/hide video controls.
-    init(customControlsContainer controls: ControlsContainerProtocol? = nil, videoID id: String, startPoint start: Double = 0.0, shouldStartPlaying autoPlay: Bool = true) {
+    public init(customControlsContainer controls: ControlsContainerProtocol? = nil, videoID id: String, startPoint start: Double = 0.0, shouldStartPlaying autoPlay: Bool = true) {
         super.init(nibName: nil, bundle: nil)
         
         self.definesPresentationContext = true
@@ -198,28 +198,28 @@ public class PlayerView: UIViewController {
     
     /// Sets the amount for how much time remaining of the video, before the 'next video' button will be shown.
     /// - Parameter amount: Amount in seconds.
-    func setHeadsUpTimer(amount: Double) -> PlayerView {
+    public func setHeadsUpTimer(amount: Double) -> PlayerView {
         self.headsUpTimer = amount
         return self
     }
     
     /// Sets the duration of transition to and from fullscreen-animation.
     /// - Parameter amount: Amount in seconds.
-    func setFullscreenAnimationDuration(with amount: Double) -> PlayerView {
+    public func setFullscreenAnimationDuration(with amount: Double) -> PlayerView {
         self.presenterDuration = amount
         return self
     }
     
     /// Sets the amount of time, in seconds, the player should skip when skipForward/skipBackward buttons are pressed.
     /// - Parameter amount: Amount in seconds.
-    func setSkipInterval(with amount: Double) -> PlayerView {
+    public func setSkipInterval(with amount: Double) -> PlayerView {
         self.skipInterval = amount
         return self
     }
     
     /// Sets the duration of the fade animation when hiding/showing the controls container.
     /// - Parameter amount: Amount in seconds.
-    func setFadeDuration(with amount: Double) -> PlayerView {
+    public func setFadeDuration(with amount: Double) -> PlayerView {
         self.controlFadeDuration = amount
         return self
     }
@@ -227,13 +227,13 @@ public class PlayerView: UIViewController {
     
     /// Sets the amount of time to be passed before the controls will automaticly hide.
     /// - Parameter amount: Amount in seconds.
-    func setControlIdleFadeTimer(with amount: Double) -> PlayerView {
+    public func setControlIdleFadeTimer(with amount: Double) -> PlayerView {
         self.controlIdleFadeTimer = amount
         return self
     }
     
     // MARK: - Public functions
-    func updateControlsLayout() {
+    public func updateControlsLayout() {
         self.controlsContainer.viewLayoutHaveChanged()
     }
     

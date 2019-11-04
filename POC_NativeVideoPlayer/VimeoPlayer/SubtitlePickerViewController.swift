@@ -9,7 +9,7 @@
 import UIKit
 import PlayerKit
 
-class SubtitlePickerTableViewCell: UITableViewCell {
+public class SubtitlePickerTableViewCell: UITableViewCell {
     static var identifier = "SubtitlePickerTableViewCellIdentifier"
     
     var iconImage = UIImageView()
@@ -44,7 +44,7 @@ class SubtitlePickerTableViewCell: UITableViewCell {
     }
 }
 
-class SubtitlePickerViewController: UIViewController {
+public class SubtitlePickerViewController: UIViewController {
     
     static let nibName = "SubtitlePickerViewController"
     
@@ -60,7 +60,7 @@ class SubtitlePickerViewController: UIViewController {
     @IBOutlet weak var tableViewHeightConstraint: NSLayoutConstraint!
     
     init() {
-        super.init(nibName: type(of: self).nibName, bundle: nil)
+        super.init(nibName: type(of: self).nibName, bundle: Utils.podBundle)
         
     }
     
@@ -72,7 +72,7 @@ class SubtitlePickerViewController: UIViewController {
     var tableViewItems = [TextTrackMetadata]()
     var selectedItem: TextTrackMetadata?
     
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         
         
@@ -87,11 +87,11 @@ class SubtitlePickerViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override public func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
+    override public func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         playerDelegate?.isPresenting = false
         playerDelegate?.startHideTimer()
@@ -99,7 +99,7 @@ class SubtitlePickerViewController: UIViewController {
 }
 
 extension SubtitlePickerViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row >= tableViewItems.count {
             playerDelegate?.player?.select(nil)
         } else {
@@ -108,17 +108,17 @@ extension SubtitlePickerViewController: UITableViewDelegate {
         self.dismiss(animated: true, completion: nil)
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
     }
 }
 
 extension SubtitlePickerViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tableViewItems.count + 1
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: SubtitlePickerTableViewCell.identifier) as? SubtitlePickerTableViewCell else { return UITableViewCell() }
         if indexPath.row < tableViewItems.count {
             
