@@ -161,7 +161,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		BA07474123432F6A00323710 /* VimeoPlayer */ = {
+		BA07474123432F6A00323710 /* MAVimeoPlayer */ = {
 			isa = PBXGroup;
 			children = (
 				BAD782DA2330D8820023BE08 /* Assets.xcassets */,
@@ -173,7 +173,7 @@
 				BAD782E82330DCA00023BE08 /* PlayerView.swift */,
 				BA07474223432FBE00323710 /* PlayerViewProtocols.swift */,
 			);
-			path = VimeoPlayer;
+			path = MAVimeoPlayer;
 			sourceTree = "<group>";
 		};
 		BA4E92B12346245F0000CAF6 /* 04. Favorites */ = {
@@ -216,7 +216,7 @@
 		BAD782D22330D87E0023BE08 /* POC_NativeVideoPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				BA07474123432F6A00323710 /* VimeoPlayer */,
+				BA07474123432F6A00323710 /* MAVimeoPlayer */,
 				BAD782E72330D8FF0023BE08 /* GynZone_POC */,
 				BAD782DC2330D8820023BE08 /* LaunchScreen.storyboard */,
 				BAD782DF2330D8820023BE08 /* Info.plist */,
