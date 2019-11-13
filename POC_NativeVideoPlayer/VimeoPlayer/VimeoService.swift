@@ -13,7 +13,7 @@ import AVKit
 public final class VimeoService {
     
     // MARK: Static properties
-    static var current = VimeoService()
+    public static var current = VimeoService()
 
     
     // MARK: - Properties
