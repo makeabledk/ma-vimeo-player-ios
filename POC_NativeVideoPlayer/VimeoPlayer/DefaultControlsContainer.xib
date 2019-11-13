@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="DefaultControlsContainer" customModule="MAVimeoPlayer">
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="DefaultControlsContainer" customModule="POC_NativeVideoPlayer">
             <rect key="frame" x="0.0" y="0.0" width="510" height="291"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -170,7 +170,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <connections>
-                <outlet property="backgroundView" destination="eCh-DN-kcd" id="6WJ-wZ-0le"/>
+                <outlet property="backgroundView" destination="eCh-DN-kcd" id="UXL-gm-mRi"/>
                 <outlet property="dismissButton" destination="8BH-cl-O01" id="HAQ-zC-pRc"/>
                 <outlet property="fullscreenButton" destination="CM4-gw-2a4" id="HoG-c2-JC9"/>
                 <outlet property="nextVideoButton" destination="o7g-c2-bU3" id="s42-Zf-4lr"/>

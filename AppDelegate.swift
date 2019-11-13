@@ -20,6 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        VimeoService.current.configure(apiVersion: "3.4", token: "TOKEN", clientIdentifier: "IDENTIFIER", clientSecret: "SECRET")
+        
         let containerVC = ContainerViewController(nibName: ContainerViewController.nibName, bundle: nil)
 
         self.logInDelegate = containerVC
