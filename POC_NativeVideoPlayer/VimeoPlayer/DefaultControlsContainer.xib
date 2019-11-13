@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="DefaultControlsContainer" customModule="POC_NativeVideoPlayer">
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="DefaultControlsContainer" customModule="POC_NativeVideoPlayer" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="510" height="291"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -37,7 +37,7 @@
                     <color key="minimumTrackTintColor" red="0.0" green="0.5450980392" blue="0.80784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                     <color key="thumbTintColor" red="0.0" green="0.54509803921568623" blue="0.80784313725490198" alpha="1" colorSpace="calibratedRGB"/>
                 </slider>
-                <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Alz-bf-E9s" customClass="PlayerViewButton" customModule="MAVimeoPlayer">
+                <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Alz-bf-E9s" customClass="PlayerViewButton" customModule="POC_NativeVideoPlayer" customModuleProvider="target">
                     <rect key="frame" x="430" y="205" width="24" height="24"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="24" id="0AY-RA-YgS"/>
@@ -46,7 +46,7 @@
                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal" image="text.bubble.fill" catalog="system"/>
                 </button>
-                <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CM4-gw-2a4" customClass="PlayerViewButton" customModule="MAVimeoPlayer">
+                <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CM4-gw-2a4" customClass="PlayerViewButton" customModule="POC_NativeVideoPlayer" customModuleProvider="target">
                     <rect key="frame" x="470" y="205" width="24" height="24"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="24" id="Ate-Rx-ggg"/>
@@ -58,7 +58,7 @@
                     </state>
                     <state key="selected" image="icon_fullscreen_dismiss"/>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2lc-pO-thf" customClass="PlayerViewButton" customModule="MAVimeoPlayer">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2lc-pO-thf" customClass="PlayerViewButton" customModule="POC_NativeVideoPlayer" customModuleProvider="target">
                     <rect key="frame" x="223" y="113.5" width="64" height="64"/>
                     <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -84,7 +84,7 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AKL-Pz-vEX" customClass="PlayerViewButton" customModule="MAVimeoPlayer">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AKL-Pz-vEX" customClass="PlayerViewButton" customModule="POC_NativeVideoPlayer" customModuleProvider="target">
                     <rect key="frame" x="159" y="121.5" width="48" height="48"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="48" id="TSF-s4-AJA"/>
@@ -95,7 +95,7 @@
                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="29" scale="large"/>
                     </state>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8BH-cl-O01" customClass="PlayerViewButton" customModule="MAVimeoPlayer">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8BH-cl-O01" customClass="PlayerViewButton" customModule="POC_NativeVideoPlayer" customModuleProvider="target">
                     <rect key="frame" x="16" y="60" width="32" height="32"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="32" id="Eev-6a-5tz"/>
@@ -107,7 +107,7 @@
                 <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4vO-YY-L5F">
                     <rect key="frame" x="368" y="201" width="126" height="30"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o7g-c2-bU3" customClass="PlayerViewButton" customModule="MAVimeoPlayer">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o7g-c2-bU3" customClass="PlayerViewButton" customModule="POC_NativeVideoPlayer" customModuleProvider="target">
                             <rect key="frame" x="10" y="4" width="106" height="22"/>
                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
@@ -130,7 +130,7 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
-                <button opaque="NO" contentMode="TopLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2LT-1S-aK7" customClass="PlayerViewButton" customModule="MAVimeoPlayer">
+                <button opaque="NO" contentMode="TopLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2LT-1S-aK7" customClass="PlayerViewButton" customModule="POC_NativeVideoPlayer" customModuleProvider="target">
                     <rect key="frame" x="303" y="121.5" width="48" height="48"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="48" id="0wN-ui-ciw"/>
