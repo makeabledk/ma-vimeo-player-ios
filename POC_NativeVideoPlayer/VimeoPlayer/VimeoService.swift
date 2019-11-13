@@ -10,7 +10,7 @@ import Foundation
 import VimeoNetworking
 import AVKit
 
-final class VimeoService {
+public final class VimeoService {
     
     // MARK: Static properties
     static var current = VimeoService()
@@ -32,7 +32,7 @@ final class VimeoService {
     // MARK: - Overrides for init
     private init() {}
     
-    // MARK: - Public functions
+    // MARK: - MAVimeoPlayer internal functions
     func requestHLSVideo(withId id: String, completion: @escaping (URL?) -> ()) {
         let videoRequest = Request<VIMVideo>(path: "/videos/\(id)")
         let _ = vimeoClient.request(videoRequest) { result in
@@ -55,6 +55,7 @@ final class VimeoService {
         }
     }
     
+    // MARK: - Public functions
     public func configure(apiVersion: String, token: String, clientIdentifier: String, clientSecret: String) {
         do {
             guard try NSRegularExpression(pattern: "^(\\*|\\d+(\\.\\d+){0,2}(\\.\\d)?)$").matches(apiVersion) else { return }
