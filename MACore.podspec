@@ -9,7 +9,7 @@ spec.ios.deployment_target = "11.0"
 
 # Pod settings:
 spec.name = "MAVimeoPlayer"
-spec.version = "0.0.10"
+spec.version = "0.0.12"
 spec.summary = "A framework helping to play vimeo videos in iOS apps"
 spec.author = { "Christian Petersen" => "christian@makeable.dk" }
 spec.source = { :git => "https://github.com/makeabledk/ma-vimeo-player-ios.git", :tag => "#{spec.version}" }
