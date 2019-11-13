@@ -12,7 +12,7 @@ class Utils {
     static var podBundle: Bundle? {
         get {
             let podBundle = Bundle(for: Utils.self)
-            if let url = podBundle.url(forResource: "VimeoPlayer", withExtension: "bundle"), let serviceBundle = Bundle(url: url) {
+            if let url = podBundle.url(forResource: "MAVimeoPlayer", withExtension: "bundle"), let serviceBundle = Bundle(url: url) {
                 return serviceBundle
             }
             return nil
