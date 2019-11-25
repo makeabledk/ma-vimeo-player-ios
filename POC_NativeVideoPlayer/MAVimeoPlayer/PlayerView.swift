@@ -187,6 +187,7 @@ public class PlayerView: UIViewController {
             guard let url = url else { return }
             self.player!.set(AVAsset(url: url))
             self.currentVideoID = id
+            self.nextVideoID = nil
             self.checkedForNext = false
             self.hideOrShowNextVideoButton(hide: true)
             if play {
@@ -528,7 +529,6 @@ public class PlayerView: UIViewController {
         player!.pause()
         self.configurePlayerView(videoID: nextID)
         delegate?.playingNextVideoInQueue(finishedVideoID: currentVideoID, nextID: nextID)
-        self.nextVideoID = nil
         skipTo = nextSkipTo
         nextSkipTo = 0.0
         currentTimeWithIntervals = 0.0
