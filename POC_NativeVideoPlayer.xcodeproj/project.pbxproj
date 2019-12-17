@@ -81,8 +81,8 @@
 		BA4E92B22346247E0000CAF6 /* FavoritesTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTabViewController.swift; sourceTree = "<group>"; };
 		BA4E92B32346247E0000CAF6 /* FavoritesTabViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoritesTabViewController.xib; sourceTree = "<group>"; };
 		BA85D0622345E3C3006708C3 /* GynZone_Animator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GynZone_Animator.swift; sourceTree = "<group>"; };
-		BA8F2CEA234DF93400062C35 /* SubtitlePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SubtitlePickerViewController.swift; path = POC_NativeVideoPlayer/VimeoPlayer/SubtitlePickerViewController.swift; sourceTree = SOURCE_ROOT; };
-		BA8F2CEB234DF93400062C35 /* SubtitlePickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SubtitlePickerViewController.xib; path = POC_NativeVideoPlayer/VimeoPlayer/SubtitlePickerViewController.xib; sourceTree = SOURCE_ROOT; };
+		BA8F2CEA234DF93400062C35 /* SubtitlePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitlePickerViewController.swift; sourceTree = "<group>"; };
+		BA8F2CEB234DF93400062C35 /* SubtitlePickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubtitlePickerViewController.xib; sourceTree = "<group>"; };
 		BAAD8AA6234B21EE00CA5254 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		BAAD8AA7234B21EE00CA5254 /* ContainerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContainerViewController.xib; sourceTree = "<group>"; };
 		BAB2497823321A79005BEAE0 /* VimeoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VimeoService.swift; sourceTree = "<group>"; };

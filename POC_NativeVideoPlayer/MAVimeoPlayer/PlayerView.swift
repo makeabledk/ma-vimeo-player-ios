@@ -126,6 +126,13 @@ public class PlayerView: UIViewController {
                     self.controlsContainer.fullscreenButton?.isSelected = self.isFullScreen
                 }
             }
+            if isFullScreen {
+                self.controlsContainer.dismissButton?.isHidden = true
+                self.controlsContainer.dismissButton?.isEnabled = false
+            }else{
+                self.controlsContainer.dismissButton?.isHidden = false
+                self.controlsContainer.dismissButton?.isEnabled = true
+            }
         }
     }
     
@@ -146,6 +153,8 @@ public class PlayerView: UIViewController {
     private var presenter: PlayerViewPresenter?
     private var presenterView: UIView?
     private var testing = true
+    
+    private var spinner: UIActivityIndicatorView?
     
     // MARK: - Override functions for init
     /// Custom initializer for Vimeo player view.
@@ -178,20 +187,22 @@ public class PlayerView: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(startHideTimer), name: PlayerView.controlsInteractionEndedNotification.name, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(cancelTimer), name: PlayerView.controlsInteractionBeganNotification.name, object: nil)
-        
     }
     
     // MARK: - Configure functions
     private func configurePlayerView(videoID id: String, _ play: Bool = true) {
         VimeoService.current.requestHLSVideo(withId: id, completion: { url in
             guard let url = url else { return }
-            self.player!.set(AVAsset(url: url))
-            self.currentVideoID = id
-            self.nextVideoID = nil
-            self.checkedForNext = false
-            self.hideOrShowNextVideoButton(hide: true)
-            if play {
-                self.player!.play()
+            if self.player != nil {
+                self.player!.set(AVAsset(url: url))
+                self.currentVideoID = id
+                self.nextVideoID = nil
+                self.checkedForNext = false
+                self.hideOrShowNextVideoButton(hide: true)
+                
+                if play {
+                    self.player!.play()
+                }
             }
         })
     }
@@ -255,6 +266,18 @@ public class PlayerView: UIViewController {
         controlsContainer.snp.makeConstraints({ make in
             make.edges.equalTo(view.safeAreaInsets)
         })
+        
+        if spinner == nil {
+        spinner = UIActivityIndicatorView(style: .whiteLarge)
+            self.view.addSubview(spinner!)
+            self.spinner?.snp.makeConstraints({ make in
+            make.centerY.centerX.equalToSuperview()
+        })
+            self.view.bringSubviewToFront(spinner!)
+            self.spinner?.isHidden = true
+            self.spinner?.hidesWhenStopped = true
+            self.spinner?.startAnimating()
+        }
         
         player!.delegate = self
         
@@ -468,7 +491,7 @@ public class PlayerView: UIViewController {
         }
     }
     
-    @objc func dismissSelf() {
+    @objc public func dismissSelf() {
         NotificationCenter.default.removeObserver(self, name: UIApplication.willResignActiveNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIDevice.orientationDidChangeNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: PlayerView.controlsInteractionBeganNotification.name, object: nil)
@@ -477,7 +500,10 @@ public class PlayerView: UIViewController {
         if let id = currentVideoID, let time = player?.time, let duration = player?.duration {
             delegate?.timeStampUpdatedByIntevalOnVideo(withID: id, newCurrentTime: time, duration: duration)
         }
+        
+        self.player?.pause()
         self.player = nil
+        
         delegate?.shouldDismissPlayer()
         if isFullScreen {
             self.dissmissPlayerInFullscreen()
@@ -576,8 +602,11 @@ extension PlayerView: PlayerDelegate {
     public func playerDidUpdateState(player: Player, previousState: PlayerState) {
         switch player.state {
         case .loading:
+            self.spinner?.isHidden = false
+            self.spinner?.startAnimating()
             break
         case .ready:
+            self.spinner?.stopAnimating()
             if skipTo > 0.0 {
                 player.seek(to: skipTo)
                 if player.playing {

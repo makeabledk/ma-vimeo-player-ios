@@ -466,7 +466,7 @@ final public class AuthenticationController {
         }
         
         if loadClientCredentials {
-            let loadedClientCredentialsAccount = (((try? self.accountStore.loadAccount(ofType: .clientCredentials)) as VIMAccount??)) ?? nil
+            let loadedClientCredentialsAccount = (try? self.accountStore.loadAccount(ofType: .clientCredentials)) ?? nil
             try self.setClientAccount(with: loadedClientCredentialsAccount, shouldClearCache: true)
         }
         else {
